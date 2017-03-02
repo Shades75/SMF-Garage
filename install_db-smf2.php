@@ -4,23 +4,20 @@
 ***********************************************************************************
 * SMF Garage: Simple Machines Forum Garage (MOD)                                  *
 * =============================================================================== *
-* Software Version:           SMF Garage 2.2                                      *
-* Install for:                1.0-2.99                                            *
-* Software by:                RRasco (http://www.smfgarage.com)                   *
+* Software Version:           SMF Garage 2.3                                      *
+* Install for:                2.0.9-2.0.99                                        *
+* Original Developer:         RRasco (http://www.smfgarage.com)                   *
+* Copyright 2015 by:          Bruno Alves (margarett.pt@gmail.com                 *
 * Copyright 2007-2011 by:     SMF Garage (http://www.smfgarage.com)               *
 *                             RRasco (rrasco@smfgarage.com)                       *
 * phpBB Garage by:            Esmond Poynton (esmond.poynton@gmail.com)           *
-* Support, News, Updates at:  http://www.smfgarage.com                            *
 ***********************************************************************************
 * See the "SMF_Garage_License.txt" file for details.                              *
 *              http://www.opensource.org/licenses/BSD-3-Clause                    *
-*                                                                                 *
-* The latest version can always be found at:                                      *
-*              http://www.smfgarage.com                                           *
 **********************************************************************************/
 
 // Set install version
-$install_version = "2.1";
+$install_version = "2.3";
 
 // Check for config table in database
 $request = $smcFunc['db_query']('', 'SHOW TABLES LIKE "{db_prefix}garage_config"');
@@ -42,138 +39,19 @@ function upgrade_smfg_db($install_version, $version)
 {
     global $smcFunc;
     
-    // Upgrade to 0.5.3a from 0.5.2a
-    if(version_compare($version, "0.5.3a", "<")) {
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('rating_system', '0')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_watermark_thumb', '1')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('watermark_position', '8')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('watermark_opacity', '100')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('image_processor', '1')");
-        $smcFunc['db_query']('', "UPDATE {db_prefix}garage_config SET config_value = '0.5.3a' WHERE config_name = 'version'");
-    }
+    // Upgrade to 0.5.3a from 0.5.2a -- removed
     
-    // Upgrade to 0.6.0b from 0.5.3a
-    if(version_compare($version, "0.6.0b", "<")) {
-        $smcFunc['db_query']('', "CREATE TABLE {db_prefix}garage_views (
-              `id` int(10) NOT NULL auto_increment, 
-              `vid` int(10) NOT NULL default '0', 
-              `ip` varchar(16) NOT NULL default '', 
-              PRIMARY KEY  (`id`)
-             ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_lightbox', '1')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('disable_garage', '')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('gcard_watermark', '1')");
+    // Upgrade to 0.6.0b from 0.5.3a -- removed
+    
+    // Upgrade to 0.6.0b2 from 0.6.0b -- removed
 
-        // insert default businesses
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_business VALUES ('', 'Unknown', '', '', '', '', '', '', 0, 0, 0, 1, 1, 0, '')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_business VALUES ('', 'Self-Installation', '', '', '', '', '', '', 0, 1, 0, 0, 0, 0, '')");
-        
-        // remove un-used config rows
-        $smcFunc['db_query']('', "DELETE FROM {db_prefix}garage_config WHERE config_name = 'featured_vehicle_random'");
-        $smcFunc['db_query']('', "DELETE FROM {db_prefix}garage_config WHERE config_name = 'enable_mod_gallery'");
-        $smcFunc['db_query']('', "DELETE FROM {db_prefix}garage_config WHERE config_name = 'enable_quartermile_gallery'");
-        $smcFunc['db_query']('', "DELETE FROM {db_prefix}garage_config WHERE config_name = 'enable_dynorun_gallery'");
-        $smcFunc['db_query']('', "DELETE FROM {db_prefix}garage_config WHERE config_name = 'enable_lap_gallery'");
-        $smcFunc['db_query']('', "DELETE FROM {db_prefix}garage_config WHERE config_name = 'enable_insurance_search'");
-        
-        // New default for thumbnail resolution, well, maybe not, they may have this set already 
-        // and want it to stay that way, we will just set it if this is a new install for now
-        // $smcFunc['db_query']('', "UPDATE {db_prefix}garage_config VALUES config_value = '150' WHERE config_name = 'thumbnail_resolution'");
-        
-        $smcFunc['db_query']('', "UPDATE {db_prefix}garage_config SET config_value = '0.6.0b' WHERE config_name = 'version'");
-    }
-    
-    // Upgrade to 0.6.0b2 from 0.6.0b
-    if(version_compare($version, "0.6.0b2", "<")) {
-        $smcFunc['db_query']('', "ALTER TABLE {db_prefix}garage_premiums CHANGE `premium` `premium` INT( 10 ) NULL DEFAULT NULL");
-        
-        // Add the new blocks        
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_blocks VALUES (13, 'last_service', 'latest_service_limit', 'enable_last_service', 'Latest Service', 13, 1)");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_blocks VALUES (14, 'last_blog', 'latest_blog_limit', 'enable_last_blog', 'Latest Blog Entry', 14, 1)");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_blocks VALUES (15, 'last_video', 'latest_video_limit', 'enable_last_video', 'Latest Video Entry', 15, 1)");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_last_service', '1')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('latest_service_limit', '5')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_last_blog', '1')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('latest_blog_limit', '5')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_last_video', '1')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('latest_video_limit', '5')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_vehicle_video', '1')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_modification_video', '1')"); 
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_quartermile_video', '1')"); 
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_dynorun_video', '1')"); 
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_laptime_video', '1')");
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('gallery_limit_video', '5')");
-        
-        // Misc notifications table (guestbook comments)
-        $smcFunc['db_query']('', "CREATE TABLE IF NOT EXISTS {db_prefix}garage_notifications_misc (
-          `id` int(2) NOT NULL auto_increment,
-          `user_id` int(6) NOT NULL default '0',
-          `gb_opt_out` int(1) NOT NULL default '0',
-          PRIMARY KEY  (`id`)
-        ) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
-        
-        // Insert video tables
-        $smcFunc['db_query']('', "CREATE TABLE IF NOT EXISTS {db_prefix}garage_video (
-          `id` int(6) NOT NULL auto_increment,
-          `vehicle_id` int(5) NOT NULL default '0',
-          `url` varchar(75) NOT NULL default '',
-          `title` varchar(75) NOT NULL default '',
-          `video_desc` varchar(255) NOT NULL default '',
-          PRIMARY KEY  (`id`)
-        ) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
-        
-        $smcFunc['db_query']('', "CREATE TABLE IF NOT EXISTS {db_prefix}garage_video_gallery (
-          `id` int(6) NOT NULL auto_increment,
-          `vehicle_id` int(6) NOT NULL default '0',
-          `video_id` int(6) NOT NULL default '0',
-          `type` varchar(7) NOT NULL default '',
-          `type_id` int(6) NOT NULL default '0',
-          PRIMARY KEY  (`id`)
-        ) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
-    
-        $smcFunc['db_query']('', "UPDATE {db_prefix}garage_config SET config_value = '0.6.0b2' WHERE config_name = 'version'");
-    }
+    // Upgrade to RC1 from 0.6.0b2 -- removed
 
-    // Upgrade to RC1 from 0.6.0b2
-    if(version_compare($version, "0.6.0RC1", "<")) {    
-        // Insert new config rows
-        $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('featured_vehicle_image_required', '0')");
-    
-        // Create garage comments table
-        $smcFunc['db_query']('', "CREATE TABLE IF NOT EXISTS {db_prefix}garage_comments (
-            `id` int(10) unsigned NOT NULL auto_increment,
-            `user_id` int(10) unsigned NOT NULL default '0',
-            `author_id` mediumint(8) NOT NULL default '0',
-            `post_date` int(10) NOT NULL default '0',
-            `ip_address` varchar(16) NOT NULL default '',
-            `pending` enum('0','1') NOT NULL default '0',
-            `post` text,
-            PRIMARY KEY  (`id`),
-            KEY `user_id` (`user_id`),
-            KEY `author_id` (`author_id`),
-            KEY `post_date` (`post_date`)
-        )");
-        
-        // Update the Version in the config
-        $smcFunc['db_query']('', "UPDATE {db_prefix}garage_config SET config_value = '0.6.0RC1' WHERE config_name = 'version'");
-    }
+    // Upgrade to 2.0 from 0.6.0RC1 -- removed
 
-    // Upgrade to 2.0 from 0.6.0RC1
-    if(version_compare($version, "2.0", "<")) {    
-        
-        // Update the Version in the config
-        $smcFunc['db_query']('', "UPDATE {db_prefix}garage_config SET config_value = '2.0' WHERE config_name = 'version'");
-    }
-
-    // Upgrade to 2.1 from 2.0
-    if(version_compare($version, "2.1", "<")) {    
-        
-        // Update the Version in the config
-        $smcFunc['db_query']('', "UPDATE {db_prefix}garage_config SET config_value = '2.1' WHERE config_name = 'version'");
-    }
+    // Upgrade to 2.1 from 2.0 -- removed
     
-    // Next upgrade goes here
-    
+    // Upgrade from 2.1 to 2.3
     if(version_compare($version, $install_version, "<")) {
         $smcFunc['db_query']('', "UPDATE {db_prefix}garage_config SET config_value = '".$install_version."' WHERE config_name = 'version'");
     }
@@ -183,6 +61,8 @@ function upgrade_smfg_db($install_version, $version)
 function install_smfg_db($install_version) 
 {
     global $smcFunc;
+	
+	//TODO -- transform all of this into proper $smcFunc insert
     
     // blocks
     $smcFunc['db_query']('', "CREATE TABLE IF NOT EXISTS {db_prefix}garage_blocks (

@@ -5,49 +5,11 @@
 	<id>RRasco:SMFGarage</id>
 	<name>SMF Garage</name>
 	<type>modification</type>
-	<version>2.2</version>
-    
-    <!-- SMF 1 -->
+	<version>2.3</version>
 
     <!-- Installation, the key part of this file. -->
-    <install for="1.1 RC3, 1.1, 1.1.0-1.1.99">
-        <readme>ReadMe.txt</readme>
-        <code type="file">install_db-smf1.php</code>
-        <modification type="file">modification-smf1.xml</modification>
-        <require-file name="smf1/Garage.php" destination="$sourcedir" />
-        <require-file name="smf1/GarageFunctions.php" destination="$sourcedir" />
-        <require-file name="smf1/GarageSettings.php" destination="$sourcedir" />
-        <require-file name="smf1/GarageManagement.php" destination="$sourcedir" />
-        <require-file name="smf1/Garage.template.php" destination="$themedir" />
-        <require-file name="smf1/GarageSettings.template.php" destination="$themedir" />
-        <require-file name="smf1/GarageManagement.template.php" destination="$themedir" />
-        <require-file name="smf1/Garage.english.php" destination="$languagedir" />
-        <require-file name="smf1/Garage.english-utf8.php" destination="$languagedir" />
-        <require-file name="smf1/dynamicoptionlist.js" destination="$themedir" />
-        <require-file name="smf1/garage_functions.js" destination="$themedir" />
-        <require-file name="smf1/gen_validatorv2.js" destination="$themedir" />
-        <require-file name="smf1/mootools1.11.js" destination="$themedir" />
-        <require-file name="smf1/shadowbox.css" destination="$themedir" />
-        <require-file name="smf1/shadowbox.js" destination="$themedir" />
-        <require-file name="smf1/shadowbox-mootools.js" destination="$themedir" />
-        <require-file name="smf1/smfg_eip.js" destination="$themedir" />
-        <require-file name="smf1/smfg_ajax.js" destination="$themedir" />
-        <require-file name="smf1/SSI_Garage.php" destination="$boarddir" />
-        <require-file name="smf1/ssi_garage_examples.php" destination="$boarddir" />
-        <require-dir name="smf1/images" destination="$themedir" />
-        <require-dir name="smf1/Garage" destination="$boarddir" />
-    </install>
-
-    <!-- Don't forget something to make it uninstallable! -->
-    <uninstall for="1.1 RC3,1.1, 1.1.0-1.1.99">
-        <modification type="file" reverse="true">modification-smf1.xml</modification>
-    </uninstall>
-    
-    <!-- SMF 2 -->
-
-    <!-- Installation, the key part of this file. -->
-    <install for="2.0-2.99">
-        <readme>ReadMe.txt</readme>
+    <install for="2.0.9-2.0.99">
+        <readme parsebbc="true">readme.txt</readme>
         <code type="file">install_db-smf2.php</code>
         <modification type="file">modification-smf2.xml</modification>
         <require-file name="smf2/Garage.php" destination="$sourcedir" />
@@ -59,29 +21,16 @@
         <require-file name="smf2/GarageManagement.template.php" destination="$themedir" />
         <require-file name="smf2/Garage.english.php" destination="$languagedir" />
         <require-file name="smf2/Garage.english-utf8.php" destination="$languagedir" />
-        <require-file name="smf2/dynamicoptionlist.js" destination="$themedir" />
-        <require-file name="smf2/garage_functions.js" destination="$themedir" />
-        <require-file name="smf2/gen_validatorv2.js" destination="$themedir" />
-        <require-file name="smf2/jquery.jeditable.mini.js" destination="$themedir" />
-        <require-file name="smf2/jquery.preload.min.js" destination="$themedir" />
-        <require-file name="smf2/jquery.tipTip.minified.js" destination="$themedir" />
-        <require-file name="smf2/jquery-1.6.1.min.js" destination="$themedir" />
-        <require-file name="smf2/jquery-smfg.js" destination="$themedir" />
-        <require-file name="smf2/jquery-ui-1.8.13.custom.css" destination="$themedir" />
-        <require-file name="smf2/jquery-ui-1.8.13.custom.min.js" destination="$themedir" />
-        <require-file name="smf2/shadowbox.css" destination="$themedir" />
-        <require-file name="smf2/shadowbox.js" destination="$themedir" />
-        <require-file name="smf2/smfg_ajax.js" destination="$themedir" />
-        <require-file name="smf2/smfg_tips.css" destination="$themedir" />
         <require-file name="smf2/SSI_Garage.php" destination="$boarddir" />
         <require-file name="smf2/ssi_garage_examples.php" destination="$boarddir" />
         <require-dir name="smf2/css" destination="$themedir" />
         <require-dir name="smf2/images" destination="$themedir" />
+		<require-dir name="smf2/scripts" destination="$themedir" />
         <require-dir name="smf2/Garage" destination="$boarddir" />
     </install>
 
     <!-- Don't forget something to make it uninstallable! -->
-	<uninstall for="2.0-2.99">
+	<uninstall for="2.0.9-2.0.99">
 		<modification type="file" reverse="true">modification-smf2.xml</modification>
 	</uninstall>
 

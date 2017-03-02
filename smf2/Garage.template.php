@@ -4,19 +4,16 @@
 ***********************************************************************************
 * SMF Garage: Simple Machines Forum Garage (MOD)                                  *
 * =============================================================================== *
-* Software Version:           SMF Garage 2.2                                      *
-* Install for:                1.0-2.99                                            *
-* Software by:                RRasco (http://www.smfgarage.com)                   *
+* Software Version:           SMF Garage 2.3                                      *
+* Install for:                2.0.9-2.0.99                                        *
+* Original Developer:         RRasco (http://www.smfgarage.com)                   *
+* Copyright 2015 by:          Bruno Alves (margarett.pt@gmail.com                 *
 * Copyright 2007-2011 by:     SMF Garage (http://www.smfgarage.com)               *
 *                             RRasco (rrasco@smfgarage.com)                       *
 * phpBB Garage by:            Esmond Poynton (esmond.poynton@gmail.com)           *
-* Support, News, Updates at:  http://www.smfgarage.com                            *
 ***********************************************************************************
 * See the "SMF_Garage_License.txt" file for details.                              *
 *              http://www.opensource.org/licenses/BSD-3-Clause                    *
-*                                                                                 *
-* The latest version can always be found at:                                      *
-*              http://www.smfgarage.com                                           *
 **********************************************************************************/
 
 function template_main()
