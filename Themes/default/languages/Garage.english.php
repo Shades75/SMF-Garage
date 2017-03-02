@@ -1,20 +1,20 @@
 <?php
 /**********************************************************************************
-* Garage.english.php                                                              *
-***********************************************************************************
-* SMF Garage: Simple Machines Forum Garage (MOD)                                  *
-* =============================================================================== *
-* Software Version:           SMF Garage 2.3                                      *
-* Install for:                2.0.9-2.0.99                                        *
-* Original Developer:         RRasco (http://www.smfgarage.com)                   *
-* Copyright 2015 by:          Bruno Alves (margarett.pt@gmail.com                 *
-* Copyright 2007-2011 by:     SMF Garage (http://www.smfgarage.com)               *
-*                             RRasco (rrasco@smfgarage.com)                       *
-* phpBB Garage by:            Esmond Poynton (esmond.poynton@gmail.com)           *
-***********************************************************************************
-* See the "SMF_Garage_License.txt" file for details.                              *
-*              http://www.opensource.org/licenses/BSD-3-Clause                    *
-**********************************************************************************/
+ * Garage.english.php                                                              *
+ ***********************************************************************************
+ * SMF Garage: Simple Machines Forum Garage (MOD)                                  *
+ * =============================================================================== *
+ * Software Version:           SMF Garage 2.3                                      *
+ * Install for:                2.0.9-2.0.99                                        *
+ * Original Developer:         RRasco (http://www.smfgarage.com)                   *
+ * Copyright 2015 by:          Bruno Alves (margarett.pt@gmail.com                 *
+ * Copyright 2007-2011 by:     SMF Garage (http://www.smfgarage.com)               *
+ *                             RRasco (rrasco@smfgarage.com)                       *
+ * phpBB Garage by:            Esmond Poynton (esmond.poynton@gmail.com)           *
+ ***********************************************************************************
+ * See the "SMF_Garage_License.txt" file for details.                              *
+ *              http://www.opensource.org/licenses/BSD-3-Clause                    *
+ **********************************************************************************/
 
 global $smfgSettings;
 
@@ -845,8 +845,8 @@ $txt['smfg_track_added'] = 'Track successfully submitted.';
 $txt['smfg_make_added'] = 'Make successfully submitted.';
 $txt['smfg_model_added'] = 'Model successfully submitted.';
 $txt['smfg_pending'] = 'Pending';
-$txt['smfg_pending_PM'] = 'There are new items pending in the garage. [url='.$scripturl.'?action=garagemanagement;sa=pending]Click Here[/url] to view them now.';
-$txt['smfg_pending_email'] = 'There are new items pending in the garage. <a href="'.$scripturl.'?action=garagemanagement;sa=pending">Click Here</a> to view them now.';
+$txt['smfg_pending_PM'] = 'There are new items pending in the garage. [url=' . $scripturl . '?action=garagemanagement;sa=pending]Click Here[/url] to view them now.';
+$txt['smfg_pending_email'] = 'There are new items pending in the garage. <a href="' . $scripturl . '?action=garagemanagement;sa=pending">Click Here</a> to view them now.';
 $txt['smfg_pm_opt_out'] = 'Opt out of personal message notifications for pending garage items.';
 $txt['smfg_email_opt_out'] = 'Opt out of email notifications for pending garage items.';
 $txt['smfg_gb_opt_out'] = 'Opt out of notifications for new garage guestbook comments.';
@@ -906,15 +906,15 @@ $txt['smfg_delete_image'] = 'Are you sure you want to delete this image?  This a
 $txt['smfg_delete_video'] = 'Are you sure you want to delete this video?  This action is irreversable.';
 $txt['smfg_pending_item'] = 'This item or an associated item (make, model, business, or track) is currently pending.  You are able to view and edit the item while it is pending, but it will not be available to the rest of the garage until it and all associated items have been approved by an adminstrator.';
 $txt['smfg_gb_notification'] = '@AUTHOR@ signed your guestbook!';
-$txt['smfg_gb_pm'] = '@AUTHOR@ has left a comment in your guestbook.  [url='.$scripturl.'?action=garage;sa=view_vehicle;VID=@VID@#guestbook]Click Here[/url] to view your guestbook.';
+$txt['smfg_gb_pm'] = '@AUTHOR@ has left a comment in your guestbook.  [url=' . $scripturl . '?action=garage;sa=view_vehicle;VID=@VID@#guestbook]Click Here[/url] to view your guestbook.';
 $txt['smfg_comment_notification'] = '@AUTHOR@ has left a comment in your garage!';
-$txt['smfg_comment_pm'] = '@AUTHOR@ has left a comment in your garage.  [url='.$scripturl.'?action=garage;sa=view_garage;UID=@UID@]Click Here[/url] to view your garage.';
+$txt['smfg_comment_pm'] = '@AUTHOR@ has left a comment in your garage.  [url=' . $scripturl . '?action=garage;sa=view_garage;UID=@UID@]Click Here[/url] to view your garage.';
 
 $txt['smfg_gnu_license'] = '
 ***********************************************************************************
 * SMF Garage: Simple Machines Forum Garage (MOD)                                  *
 * =============================================================================== *
-* Software Version:           SMF Garage '.$smfgSettings['version'].'                                      *
+* Software Version:           SMF Garage ' . $smfgSettings['version'] . '         *
 * Install for:                2.0.9-2.0.99                                        *
 * Original Developer:         RRasco (http://www.smfgarage.com)                   *
 * Copyright 2015 by:          Bruno Alves (margarett.pt@gmail.com                 *
@@ -954,5 +954,3 @@ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN 
 ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH 
 DAMAGE.';
-
-?>

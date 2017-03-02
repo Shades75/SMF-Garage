@@ -657,5 +657,3 @@ function template_ssi_below()
     </body>
 </html>';
 }
-
-?>
