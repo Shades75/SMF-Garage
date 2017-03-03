@@ -1696,4 +1696,3 @@ function install_smfg_db($install_version)
     $smcFunc['db_query']('', "INSERT INTO {db_prefix}permissions VALUES (3, 'view_laps', 1)");
     $smcFunc['db_query']('', "INSERT INTO {db_prefix}permissions VALUES (3, 'post_comments', 1)");
 }
-?>

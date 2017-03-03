@@ -3770,5 +3770,3 @@ function template_blank()
 {
     // Nothing to see here folks
 }
-
-?>
