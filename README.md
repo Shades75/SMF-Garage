@@ -3,7 +3,7 @@ This is an updated and improved version of the original SMF Garage mod by RRasco
 * **Original author:** RRasco http://www.smfgarage.com
 * **Additional author:** Bruno Alves https://github.com/margarett
 * **Additional author:** digger https://mysmf.ru
-* **License:** BSD-3-Clause
+* **License:** The BSD 3-Clause License
 * **Compatible with:** SMF 2.0
 * **Languages:** English
 * **Demo:** http://garage.mysmf.net
