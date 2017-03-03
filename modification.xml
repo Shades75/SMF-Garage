@@ -1255,6 +1255,18 @@ $txt['permissionhelp_limit_exemption'] = 'This permissions allows a user to be e
 	background-color: #cacdd3;
 }]]></search>
             <add><![CDATA[
+/* Responsive rules for small screens */
+@media screen and (min-width: 240px) and (max-width: 640px) {
+
+    /* Responsive Curve menu icon */
+    .responsive_menu.garage {
+        background: url(../images/garage.png) no-repeat;
+        height: 16px;
+        width: 16px;
+        display: inline-block;
+    }
+}
+
 .windowbg_pending
 {
     color: #000;
