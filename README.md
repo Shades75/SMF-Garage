@@ -1,12 +1,11 @@
 # SMF Garage mod
 This is an updated and improved version of the original SMF Garage mod by RRasco https://github.com/rrasco09/smfgarage    
 * **Original author:** RRasco http://www.smfgarage.com
-* **Additional author:** Bruno Alves https://github.com/margarett   
+* **Additional author:** Bruno Alves https://github.com/margarett
 * **Additional author:** digger https://mysmf.ru
-
 * **License:** BSD-3-Clause
-* **Compatible with:** SMF 2.0  
-* **Languages:** English  
+* **Compatible with:** SMF 2.0
+* **Languages:** English
 * **Demo:** http://garage.mysmf.net
 
 ## Description
