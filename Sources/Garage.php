@@ -16980,7 +16980,7 @@ function G_Garage_Card()
         $vehicle_tmp = $g_card['Vehicle'];
         $maxlinelen = 22;
         if (strlen($vehicle_tmp) > $maxlinelen) {
-            $vehicle_array = split(" ", $vehicle_tmp);
+            $vehicle_array = explode(' ', $vehicle_tmp);
             $vehicle = ARRAY();
             foreach ($vehicle_array AS $vehicle_word) {
                 $linelen = 0;

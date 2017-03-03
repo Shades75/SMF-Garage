@@ -1134,7 +1134,7 @@ function url_validate($link)
         //fputs ($socket, "HEAD ".$documentpath." HTTP/1.0\r\n");
         $http_response = fgets($socket, 22);
 
-        if (ereg("200 OK", $http_response, $regs)) {
+        if (preg_match("200 OK", $http_response, $regs)) {
             return (true);
             fclose($socket);
         } else {
