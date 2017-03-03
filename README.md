@@ -8,6 +8,8 @@ This is an updated and improved version of the original SMF Garage mod by RRasco
 * **Languages:** English
 * **Demo:** http://garage.mysmf.net
 
+![smfg2-screenshot](https://cloud.githubusercontent.com/assets/1187218/23567629/a35e97d0-0070-11e7-8f71-df08ad69ee23.png)
+
 ## Description
 
 SMF Garage is a Vehicle Management System (VMS) for Simple Machines Forum. This extension adds the capability for users to create a vehicle profile to be a associated with their user profile on an SMF forum.

@@ -5,7 +5,7 @@
 	<id>RRasco:SMFGarage</id>
 	<name>SMF Garage</name>
 	<type>modification</type>
-	<version>2.3.1</version>
+	<version>2.3.2</version>
 
     <!-- Installation, the key part of this file. -->
     <install for="2.0.9-2.0.99">

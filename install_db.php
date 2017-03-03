@@ -9,6 +9,7 @@
 * Original Developer:         RRasco (http://www.smfgarage.com)                   *
 * Copyright 2015 by:          Bruno Alves (margarett.pt@gmail.com                 *
 * Copyright 2007-2011 by:     SMF Garage (http://www.smfgarage.com)               *
+* Copyright 2007-2011 by:     SMF Garage (http://www.smfgarage.com)               *
 *                             RRasco (rrasco@smfgarage.com)                       *
 * phpBB Garage by:            Esmond Poynton (esmond.poynton@gmail.com)           *
 ***********************************************************************************
@@ -17,7 +18,7 @@
 **********************************************************************************/
 
 // Set install version
-$install_version = "2.3";
+$install_version = "2.3.2";
 
 // Check for config table in database
 $request = $smcFunc['db_query']('', 'SHOW TABLES LIKE "{db_prefix}garage_config"');
@@ -38,20 +39,7 @@ if(!$installed) {
 function upgrade_smfg_db($install_version, $version)
 {
     global $smcFunc;
-    
-    // Upgrade to 0.5.3a from 0.5.2a -- removed
-    
-    // Upgrade to 0.6.0b from 0.5.3a -- removed
-    
-    // Upgrade to 0.6.0b2 from 0.6.0b -- removed
 
-    // Upgrade to RC1 from 0.6.0b2 -- removed
-
-    // Upgrade to 2.0 from 0.6.0RC1 -- removed
-
-    // Upgrade to 2.1 from 2.0 -- removed
-    
-    // Upgrade from 2.1 to 2.3
     if(version_compare($version, $install_version, "<")) {
         $smcFunc['db_query']('', "UPDATE {db_prefix}garage_config SET config_value = '".$install_version."' WHERE config_name = 'version'");
     }
@@ -287,6 +275,7 @@ function install_smfg_db($install_version)
     $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('pending_subject', 'New Items Pending in the Garage')");
     $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('enable_modification_approval', '')");
     $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('pending_sender', '1')");
+    $smcFunc['db_query']('', "INSERT INTO {db_prefix}garage_config VALUES ('gallery_limit_video', '5')");
 
     // currency
     $smcFunc['db_query']('', "CREATE TABLE IF NOT EXISTS {db_prefix}garage_currency (
