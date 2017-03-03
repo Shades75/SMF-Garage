@@ -489,7 +489,8 @@ function dynoqm_select($VID, $dynoqm_id = 0)
 function findexts($filename)
 {
     $filename = strtolower($filename);
-    $exts = preg_split("[/\\.]", $filename);
+    $exts = explode('.', $filename);
+
     $n = count($exts) - 1;
     $exts = $exts[$n];
     return $exts;
@@ -505,7 +506,7 @@ function make_thumbnail($image, $store = 1, $remote = 0)
     //echo "<br />";
 
     $path = $boarddir . '/' . $smfgSettings['upload_directory'];
-    $name = preg_split("\.", $image);
+    $name = explode('.', $image);
 
     //echo "<b>Path</b>: ".$path;
     //echo "<br />";
