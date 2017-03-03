@@ -1069,7 +1069,7 @@ function template_image_settings()
                     <td width="50%">
 ';
     if (!$context['im_convert']) {
-        if ($context['exec_disabled']) {
+        if (!empty($context['exec_disabled'])) {
             echo $txt['smfg_exec_disabled_warning'];
         } else {
             echo $txt['smfg_im_convert_warning'];
@@ -1094,7 +1094,7 @@ function template_image_settings()
                     <td width="50%">
 ';
     if (!$context['im_composite']) {
-        if ($context['exec_disabled']) {
+        if (!empty($context['exec_disabled'])) {
             echo $txt['smfg_exec_disabled_warning'];
         } else {
             echo $txt['smfg_im_composite_warning'];
