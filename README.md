@@ -4,6 +4,7 @@ This is an updated and improved version of the original SMF Garage mod by RRasco
 * **License:** BSD-3-Clause
 * **Compatible with:** SMF 2.0  
 * **Languages:** English  
+* **Demo:** http://garage.mysmf.net
 
 ## Description
 
