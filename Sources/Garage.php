@@ -3209,7 +3209,7 @@ function G_View_Garage()
             'uid' => $_GET['UID'],
         )
     );
-    $context['comments']['total'] = mysql_result($request, 0);
+    list($context['comments']['total']) = $smcFunc['db_fetch_row']($request);
     $smcFunc['db_free_result']($request);
 
     // Construct the page index
@@ -4228,7 +4228,7 @@ function G_View_Vehicle()
             'vid' => $veh_id,
         )
     );
-    $context['blog']['total'] = mysql_result($request, 0);
+    list($context['blog']['total']) = $smcFunc['db_fetch_row']($request);
     $smcFunc['db_free_result']($request);
 
     if (!isset($_GET['start'])) {
@@ -4283,7 +4283,7 @@ function G_View_Vehicle()
             'vid' => $veh_id,
         )
     );
-    $context['gb']['total'] = mysql_result($request, 0);
+    list($context['gb']['total']) = $smcFunc['db_fetch_row']($request);
     $smcFunc['db_free_result']($request);
 
     // Construct the page index
@@ -12404,7 +12404,7 @@ function G_Insurance()
         array(// no values
         )
     );
-    $context['total'] = mysql_result($request, 0);
+    list($context['total']) = $smcFunc['db_fetch_row']($request);
     $smcFunc['db_free_result']($request);
 
     // Construct the page index, title, and add to link tree
@@ -12657,7 +12657,7 @@ function G_Shops()
         array(// no values
         )
     );
-    $context['total'] = mysql_result($request, 0);
+    list($context['total']) = $smcFunc['db_fetch_row']($request);
     $smcFunc['db_free_result']($request);
 
     // Construct the page index, title, and add to link tree
@@ -12949,7 +12949,7 @@ function G_Garages()
         array(// no values
         )
     );
-    $context['total'] = mysql_result($request, 0);
+    list($context['total']) = $smcFunc['db_fetch_row']($request);
     $smcFunc['db_free_result']($request);
 
     // Construct the page index, title, and add to link tree
