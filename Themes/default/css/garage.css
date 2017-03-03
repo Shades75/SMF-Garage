@@ -36,3 +36,11 @@
     margin-bottom: 1em;
     margin-left: 1em;
 }
+
+/* Responsive Curve menг icon */
+.responsive_menu.garage {
+    background: url(../images/garage.png) no-repeat;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+}
