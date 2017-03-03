@@ -4238,7 +4238,7 @@ function G_View_Vehicle()
     // Construct the page index
     $context['blog']['display'] = $smfgSettings['blogs_per_page'];
     $context['blog']['page_index'] = constructPageIndex($scripturl . '?action=garage;sa=view_vehicle' . (isset($_REQUEST['VID']) ? ';VID=' . $_REQUEST['VID'] : ''),
-        $_REQUEST['blog_start'], $context['blog']['total'], $context['blog']['display'], false, "blog");
+        $_REQUEST['blog_start'], $context['blog']['total'], $context['blog']['display'], false);
     $context['blog']['start'] = $_REQUEST['blog_start'] + 1;
     $context['blog']['end'] = min($_REQUEST['blog_start'] + $context['blog']['display'], $context['blog']['total']);
 
@@ -4289,7 +4289,7 @@ function G_View_Vehicle()
     // Construct the page index
     $context['gb']['display'] = $smfgSettings['comments_per_page'];
     $context['gb']['page_index'] = constructPageIndex($scripturl . '?action=garage;sa=view_vehicle' . (isset($_REQUEST['VID']) ? ';VID=' . $_REQUEST['VID'] : ''),
-        $_REQUEST['gb_start'], $context['gb']['total'], $context['gb']['display'], false, "guestbook");
+        $_REQUEST['gb_start'], $context['gb']['total'], $context['gb']['display'], false);
     $context['gb']['start'] = $_REQUEST['gb_start'] + 1;
     $context['gb']['end'] = min($_REQUEST['gb_start'] + $context['gb']['display'], $context['gb']['total']);
 
